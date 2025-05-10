@@ -1,0 +1,4 @@
+node_exporter-1.9.1.linux-amd64/
+prometheus-2.40.2.linux-amd64/
+*.deb
+*.tar.gz
