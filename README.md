@@ -154,29 +154,47 @@ sudo crontab -e
 ![alt text](img/prometheus_targets.png)
 
 ## Установка Grafana 
-
+```
 sudo apt-get install -y adduser libfontconfig1 musl
 wget https://dl.grafana.com/oss/release/grafana_12.0.0_amd64.deb
 sudo dpkg -i grafana_12.0.0_amd64.deb
+```
 ----
+```
 wget https://dl.grafana.com/oss/release/grafana-12.0.0.linux-amd64.tar.gz
 tar -zxvf grafana-12.0.0.linux-amd64.tar.gz
+```
 ----
-
+```
 systemctl enable grafana-server
 systemctl start grafana-server
 systemctl status grafana-server
-
+```
+подключаемся
 http://192.168.230.130:3000/
 Admin
 admin
+
 art
 1234
 
 ### сброс пароля
+```
 $ sudo sqlite3 /var/lib/grafana/grafana.db
 
 sqlite> update user set password = '59acf18b94d7eb0694c61e60ce44c110c7a683ac6a8f09580d626f90f4a242000746579358d77dd9e570e83fa24faa88a8a6', salt = 'F3FAxVm33R' where login = 'admin';
 sqlite> .exit
-
+```
 --------------
+
+Задание 4*
+Установите Grafana.
+
+Требования к результату
+ Прикрепите к файлу README.md скриншот левого нижнего угла интерфейса, чтобы при наведении на иконку пользователя были видны ваши ФИО
+ ![grafana](img/grafana.png)
+
+ Задание 5*
+Интегрируйте Grafana и Prometheus.
+
+![alt text](img/graf.png)
